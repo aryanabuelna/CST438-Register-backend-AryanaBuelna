@@ -36,6 +36,7 @@ public class GradebookServiceMQ extends GradebookService {
 		// TODO 
 		// create EnrollmentDTO and send to gradebookQueue
 		
+		
 		System.out.println("Message send to gradbook service for student "+ student_email +" " + course_id);  
 		
 	}
@@ -44,8 +45,11 @@ public class GradebookServiceMQ extends GradebookService {
 	public void receive(CourseDTOG courseDTOG) {
 		System.out.println("Receive enrollment :" + courseDTOG);
 
-		//TODO 
-		// for each student grade in courseDTOG,  find the student enrollment entity, update the grade and save back to enrollmentRepository.
+		// TODO 
+		// for each student grade in courseDTOG, 
+		// find the student enrollment entity, update the grade and save back to enrollmentRepository.
+		
+		
 	}
 
 }
