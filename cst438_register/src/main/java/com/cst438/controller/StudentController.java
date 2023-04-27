@@ -8,6 +8,7 @@ import com.cst438.domain.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 //import com.cst438.domain.ScheduleDTO;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 //
 //import com.cst438.domain.Student;
 import com.cst438.domain.StudentRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
+@CrossOrigin(origins = {"http://localhost:3000"})
 
 @RestController
 public class StudentController {
@@ -49,6 +52,9 @@ public class StudentController {
 	
  //add new student 
 	@PostMapping("/student")
+	
+//	@RequestParam("name") String name, @RequestParam("email")String email
+	@Transactional
 	public Student createNewStudent(@RequestParam("name") String name, @RequestParam("email")String email) {
 		// need data
 		Student student = new Student();
